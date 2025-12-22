@@ -314,6 +314,64 @@ body {
     border-bottom: none;
 }
 
+/* Papers Section */
+.papers-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.paper-item {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.paper-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.paper-authors {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.paper-venue {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.paper-abstract {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.paper-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.paper-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.paper-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
 /* Contact Section */
 .contact-content {
     text-align: center;
