@@ -23,13 +23,18 @@
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Patrick Batsell</span></h1>
-            <p class="tagline">Operations Research and Statistics student @ Rice University</p>
-            <p class="intro">Interested in Synthetic Data.</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="me.jpg" alt="Patrick Batsell">
+            </div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Patrick Batsell</span></h1>
+                <p class="tagline">Operations Research and Statistics student @ Rice University</p>
+                <p class="intro">Interested in Synthetic Data.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
             </div>
         </div>
     </header>
@@ -40,13 +45,24 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Synthetic Konkle</h3>
-                    <p>Benchmark for Vision Language Models Trained on egocentric infant data.</p>
+                    <h3>Multi-Layer Purrceptron</h3>
+                    <p>Comparative analysis of a custom 5-layer CNN vs. ResNet50 for fine-grained cat breed classification. Used Grad-CAM to reveal how from-scratch models focus on local features while pre-trained models leverage holistic context.</p>
                     <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">React</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Transfer Learning</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://github.com/PatrickBats/ML-Purrceptron" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Learning Through Little Eyes</h3>
+                    <p>Benchmark for evaluating attribute discrimination (color, size, texture) in vision-language models trained on infant egocentric data. Comparing CVCL with CLIP reveals infant-scale learning excels at size discrimination while web-scale training dominates color grounding. Pending acceptance at ICASSP 2026.</p>
+                    <div class="project-tags">
+                        <span class="tag">CLIP</span>
+                        <span class="tag">Vision-Language Models</span>
+                        <span class="tag">Cognitive Science</span>
+                    </div>
+                    <a href="https://github.com/PatrickBats/SyntheticKonkleDataset" class="project-link" target="_blank">View Project →</a>
                 </div>
                 <div class="project-card">
                     <h3>MAD Detection</h3>
@@ -57,7 +73,7 @@
                     </div>
                     <a href="#" class="project-link">View Project →</a>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -101,7 +117,7 @@
                         </svg>
                         GitHub
                     </a>
-                    <a href="mailto:your.email@example.com" class="contact-link">
+                    <a href="mailto:pb52@rice.edu" class="contact-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
