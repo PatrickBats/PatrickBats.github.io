@@ -181,6 +181,10 @@ body {
     margin-bottom: 0.15rem;
 }
 
+.pub-author-self {
+    color: var(--text-color);
+}
+
 .pub-authors a {
     color: var(--text-light);
     text-decoration: underline;
@@ -188,7 +192,7 @@ body {
 }
 
 .pub-authors a:hover {
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .pub-venue {
