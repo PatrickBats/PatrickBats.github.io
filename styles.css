@@ -181,6 +181,16 @@ body {
     margin-bottom: 0.15rem;
 }
 
+.pub-authors a {
+    color: var(--text-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.pub-authors a:hover {
+    color: var(--primary-color);
+}
+
 .pub-venue {
     color: var(--text-light);
     font-style: italic;
