@@ -231,12 +231,54 @@ body {
 }
 
 /* Visitor Map */
+.dashboard-grid {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 #visitor-map {
     height: 400px;
-    width: 100%;
+    flex: 1;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    margin-top: 1rem;
+}
+
+#visit-log {
+    width: 260px;
+    flex-shrink: 0;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.log-entry {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-time {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.log-location {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.log-empty {
+    padding: 1rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
 }
 
 .visitor-count-text {
@@ -282,5 +324,14 @@ body {
 
     .content {
         padding: 0 1rem 2rem;
+    }
+
+    .dashboard-grid {
+        flex-direction: column;
+    }
+
+    #visit-log {
+        width: 100%;
+        height: 250px;
     }
 }

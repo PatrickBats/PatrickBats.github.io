@@ -28,16 +28,36 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19
 }).addTo(map);
 
+// Escape user-influenced strings before inserting as HTML
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
 // Load and display all visits
 db.ref('visits').on('value', (snapshot) => {
     const data = snapshot.val();
     if (!data) {
         document.getElementById('visitor-count').textContent = '0';
+        document.getElementById('visit-log').innerHTML = '<p class="log-empty">No visits yet</p>';
         return;
     }
 
     const visits = Object.values(data);
     document.getElementById('visitor-count').textContent = visits.length.toLocaleString();
+
+    // Render the log feed, newest first
+    const logHtml = visits
+        .slice()
+        .sort((a, b) => b.timestamp - a.timestamp)
+        .map(v => {
+            const when = new Date(v.timestamp).toLocaleString();
+            const where = escapeHtml(`${v.city}, ${v.country}`);
+            return `<div class="log-entry"><span class="log-time">${when}</span><span class="log-location">${where}</span></div>`;
+        })
+        .join('');
+    document.getElementById('visit-log').innerHTML = logHtml;
 
     // Aggregate by location
     const locations = {};
