@@ -60,6 +60,59 @@ body {
     color: var(--primary-color);
 }
 
+/* Announcement Bar */
+.announcement-bar {
+    display: flex;
+    align-items: center;
+    background-color: #312e81;
+    color: #fff;
+    overflow: hidden;
+}
+
+.announcement-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    padding: 0.7rem 1.25rem;
+    background-color: #312e81;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    z-index: 2;
+}
+
+.announcement-viewport {
+    flex: 1;
+    overflow: hidden;
+}
+
+.announcement-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+}
+
+.announcement-track:hover {
+    animation-play-state: paused;
+}
+
+.announcement-item {
+    padding: 0.7rem 0;
+    margin-right: 3.5rem;
+    font-size: 0.9rem;
+}
+
+.announcement-date {
+    color: #a5b4fc;
+    font-weight: 700;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 /* Profile Header */
 .profile-header {
     text-align: center;
