@@ -328,6 +328,19 @@ body {
     font-size: 0.85rem;
 }
 
+.log-visitor {
+    color: var(--text-light);
+    font-size: 0.7rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    margin-top: 0.15rem;
+}
+
+.log-repeat {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-left: 0.4rem;
+}
+
 .log-empty {
     padding: 1rem;
     color: var(--text-light);

@@ -47,6 +47,16 @@ db.ref('visits').on('value', (snapshot) => {
     const visits = Object.values(data);
     document.getElementById('visitor-count').textContent = visits.length.toLocaleString();
 
+    // Count visits per visitor to identify repeats (older visits have no visitorId)
+    const visitCounts = {};
+    visits.forEach(v => {
+        if (v.visitorId) {
+            visitCounts[v.visitorId] = (visitCounts[v.visitorId] || 0) + 1;
+        }
+    });
+    document.getElementById('unique-count').textContent =
+        Object.keys(visitCounts).length.toLocaleString();
+
     // Render the log feed, newest first
     const logHtml = visits
         .slice()
@@ -54,7 +64,10 @@ db.ref('visits').on('value', (snapshot) => {
         .map(v => {
             const when = new Date(v.timestamp).toLocaleString();
             const where = escapeHtml(`${v.city}, ${v.country}`);
-            return `<div class="log-entry"><span class="log-time">${when}</span><span class="log-location">${where}</span></div>`;
+            const count = v.visitorId ? visitCounts[v.visitorId] : 0;
+            const id = v.visitorId ? escapeHtml(v.visitorId.slice(0, 6)) : '—';
+            const repeat = count > 1 ? `<span class="log-repeat">repeat ×${count}</span>` : '';
+            return `<div class="log-entry"><span class="log-time">${when}</span><span class="log-location">${where}</span><span class="log-visitor">id ${id}${repeat}</span></div>`;
         })
         .join('');
     document.getElementById('visit-log').innerHTML = logHtml;

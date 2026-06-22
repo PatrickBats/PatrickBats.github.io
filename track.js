@@ -13,13 +13,24 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
+// One-way hash so we can group repeat visitors without storing the real IP
+async function hashIp(ip) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip));
+    return Array.from(new Uint8Array(buf))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('')
+        .slice(0, 12);
+}
+
 (async function trackVisitor() {
     try {
         const res = await fetch('https://ipapi.co/json/');
         const data = await res.json();
 
         if (data.latitude && data.longitude) {
+            const visitorId = data.ip ? await hashIp(data.ip) : 'unknown';
             db.ref('visits').push({
+                visitorId: visitorId,
                 lat: data.latitude,
                 lon: data.longitude,
                 city: data.city || 'Unknown',
