@@ -1,5 +1,5 @@
 firebase.initializeApp({
-    apiKey: 'AIzaSyDRrGfze4_GZC68KaLye07jU1B6RDmgKZQ',
+    apiKey: 'AIzaSyDRrGfze4_GZC68KaLyeO7iU1B6RDmgKZQ',
     authDomain: 'patrickbatsell-site.firebaseapp.com',
     databaseURL: 'https://patrickbatsell-site-default-rtdb.firebaseio.com',
     projectId: 'patrickbatsell-site'
