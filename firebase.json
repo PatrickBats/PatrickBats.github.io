@@ -1,0 +1,14 @@
+{
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Patrick Batsell Visitor Dashboard",
+        "supportEmail": "jbatsell65@gmail.com",
+        "authorizedRedirectUris": ["https://patrickbatsell-site.firebaseapp.com/__/auth/handler"]
+      }
+    }
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}

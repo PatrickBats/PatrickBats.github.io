@@ -1,0 +1,10 @@
+{
+  "name": "patrick-visitor-log",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {"SITE_ORIGIN":"https://patrickbats.github.io","FIREBASE_PROJECT":"patrickbatsell-site","OWNER_EMAIL":"jbatsell65@gmail.com"},
+  "d1_databases": [{"binding":"DB","database_name":"patrick-visitors","database_id":"3655ca93-3e24-47f6-885b-659dec6ef767","migrations_dir":"migrations"}],
+  "ratelimits": [{"name":"VISIT_LIMITER","namespace_id":"10018","simple":{"limit":10,"period":60}}]
+}

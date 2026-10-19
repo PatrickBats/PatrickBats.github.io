@@ -1,0 +1,10 @@
+CREATE TABLE visits (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ timestamp INTEGER NOT NULL,
+ ip TEXT NOT NULL,
+ city TEXT NOT NULL,
+ country TEXT NOT NULL,
+ lat REAL,
+ lon REAL
+);
+CREATE INDEX visits_ip ON visits(ip);

@@ -23,8 +23,15 @@
     <main class="content" style="padding-top: 2rem; max-width: 1000px;">
         <section class="section" style="border-top: none;">
             <h2>Visitor Dashboard</h2>
-            <p class="visitor-count-text">Total profile views: <span id="visitor-count">0</span></p>
-            <p class="visitor-count-text">Unique visitors: <span id="unique-count">0</span></p>
+            <button id="sign-in">Sign in with Google</button>
+            <button id="sign-out" hidden>Sign out</button>
+            <p id="auth-status" role="status">Sign in to view private visitor records.</p>
+            <div id="private-controls" hidden>
+                <label>Records <select id="record-source"><option value="new">New visits with IP addresses</option><option value="legacy">Historical visits (no IP addresses)</option></select></label>
+                <p>Showing <span id="visitor-count">0</span> records on this page. Map shows this page only; locations are approximate.</p>
+                <button id="refresh">Newest visits</button>
+                <button id="next" disabled>Older visits</button>
+            </div>
             <div class="dashboard-grid">
                 <div id="visitor-map"></div>
                 <div id="visit-log"></div>
@@ -38,7 +45,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="analytics-config.js"></script>
     <script src="visitors.js"></script>
 </body>
 </html>

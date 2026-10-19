@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "visits": {
+      ".read": "auth != null && auth.token.email == 'jbatsell65@gmail.com' && auth.token.email_verified == true && auth.token.firebase.sign_in_provider == 'google.com'",
+      ".indexOn": ["timestamp"],
+      ".write": false
+    },
+    "privateVisits": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}

@@ -283,6 +283,27 @@ body {
     font-style: italic;
 }
 
+.privacy-notice {
+    max-width: 720px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    font-size: 0.85rem;
+}
+
+#private-controls button, #sign-in, #sign-out, #record-source {
+    padding: 0.5rem 0.8rem;
+    margin: 0.3rem 0.3rem 0.3rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: inherit;
+    background: var(--bg-color, #181818);
+    font: inherit;
+}
+
+button:not(:disabled), summary { cursor: pointer; }
+button:disabled { opacity: 0.5; }
+.log-entry { overflow-wrap: anywhere; }
+
 /* Visitor Map */
 .dashboard-grid {
     display: flex;
