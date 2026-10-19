@@ -92,6 +92,7 @@ async function loadPage(reset = false) {
     }
 }
 el('sign-in').onclick = async () => {
+    el('auth-status').textContent = 'Opening Google sign-in…';
     try {
         await auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
         const provider = new firebase.auth.GoogleAuthProvider();
